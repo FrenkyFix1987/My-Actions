@@ -13,4 +13,4 @@ jobs:
               uses: actions/checkout@v5
             - run : |
                 echo "This repository ${{ github.repository }} contains the following files: "
-                tree
+                tree -a
