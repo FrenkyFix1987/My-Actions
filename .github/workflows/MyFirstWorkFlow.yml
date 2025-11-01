@@ -11,7 +11,7 @@ on:
             loglevel:
                 description: "Log level"
                 default: info
-                type: choise
+                type: choice
                 options:
                     - info
                     - warning
