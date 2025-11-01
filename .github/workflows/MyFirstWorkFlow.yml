@@ -7,6 +7,24 @@ on:
         inputs:
             test:
                 description: "It's nice to see this description"
+                required: true
+            loglevel:
+                description: "Log level"
+                default: info
+                type: choise
+                options:
+                    - info
+                    - warning
+                    - debug    
+            testbuild:
+                description: "it's a test build"
+                required: true
+                type: boolean
+            environment:
+                description: "env to deploy"
+                type: environment
+                required: true
+                
 jobs:
     MyFirstJob:
         runs-on: ubuntu-latest
