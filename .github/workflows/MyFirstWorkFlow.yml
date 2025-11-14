@@ -32,9 +32,14 @@ jobs:
             - run: echo "Hello World"
             - name: Checkout
               uses: actions/checkout@v5
-            - run : |
+            - name: Show Repository Files
+              run : |
+                echo "Event: ${{ github.event_name }}"
                 echo "This repository ${{ github.repository }} contains the following files: "
-                tree -a
+                tree -a          
+            - name: Show Workflow Inputs
+              if: ${{ github.event_name == 'workflow_dispatch' }}
+              run: |
                 echo "Test input: ${{ inputs.test }}"
                 echo "Log level: ${{ inputs.loglevel }}"
                 echo "Test build: ${{ inputs.testbuild }}"
