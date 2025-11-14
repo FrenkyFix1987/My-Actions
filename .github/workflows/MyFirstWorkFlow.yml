@@ -35,3 +35,7 @@ jobs:
             - run : |
                 echo "This repository ${{ github.repository }} contains the following files: "
                 tree -a
+                echo "Test input: ${{ inputs.test }}"
+                echo "Log level: ${{ inputs.loglevel }}"
+                echo "Test build: ${{ inputs.testbuild }}"
+                echo "Environment: ${{ inputs.environment }}"
