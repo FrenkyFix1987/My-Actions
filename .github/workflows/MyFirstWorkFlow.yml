@@ -47,7 +47,7 @@ jobs:
         steps:
             - name: Hello World Action
               run: echo "Hello World"
-              working-directory: "./temp"
+              working-directory: ./temp
 
             - name: Checkout
               uses: actions/checkout@v5
@@ -91,4 +91,13 @@ jobs:
     MyFifthJob:
         runs-on: ubuntu-latest
         steps:
-            - run: "echo ${{ github.job }}" 
+            - run: "echo ${{ github.job }}"
+
+    Post:
+        runs-on: ubuntu-latest
+        steps:
+            - if: success()
+              run: "Success!!!"
+            - if: always()
+              run: "Always!!!"
+
