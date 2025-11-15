@@ -2,10 +2,6 @@ name: My First WorkFlow
 on:
     repository_dispatch:
         types: ["coffee","tea"]
-env: 
-    TEST_ACCROSS_JOBS: test_result
-
-
 jobs:
     MySimpleJob:
         runs-on: ubuntu-latest
