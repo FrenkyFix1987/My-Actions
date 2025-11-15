@@ -27,13 +27,27 @@ on:
     repository_dispatch:
         types: ["coffee","tea"]
 jobs:
+    matrix_super_job:
+        name: Supper Efficient build
+        strategy:
+            fail-fast: false
+            max-parallel: 3
+            matrix:
+                os_version: [ubuntu-latest, windows-latest, macos-latest]
+                node_version: [20, 21, 22]
+        runs-on: ${{ matrix.os_version }}
+        steps:
+            - name: Setup Node.js
+              uses: actions/setup-node@v6
+              with:
+                  node-version: ${{ matrix.node_version }}
+              
     MyFirstJob:
         runs-on: ubuntu-latest
         steps:
             - name: Hello World Action
-              run: Write-Host("Help")
+              run: echo "Hello World"
               working-directory: "./temp"
-              shell: pwsh
 
             - name: Checkout
               uses: actions/checkout@v5
