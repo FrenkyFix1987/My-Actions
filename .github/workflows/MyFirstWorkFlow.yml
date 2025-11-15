@@ -46,7 +46,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Hello World Action
-              run: echo "Hello World"
+              run: |
+                echo "TEST_ACCROSS_JOBS=test_result" >> "$GITHUB_ENV"
+                echo "Hello World"
             #   working-directory: ./temp
 
             - name: Checkout
