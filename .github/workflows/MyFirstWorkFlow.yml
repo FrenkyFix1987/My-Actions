@@ -101,7 +101,7 @@ jobs:
             - id: test_step
               run: |
                 echo "Post"
-                echo "test_result=passed" >> "$GITHUB_OUTPUTS"
+                echo "test_result=passed" >> "$GITHUB_OUTPUT"
 
 
             - if: failure()
