@@ -45,3 +45,8 @@ jobs:
                 echo "Log level: ${{ inputs.loglevel }}"
                 echo "Test build: ${{ inputs.testbuild }}"
                 echo "Environment: ${{ inputs.environment }}"
+
+            - name: Show payload for repository_dispatch
+              if: ${{ github.event_name == 'repository_dispatch' }}
+              run: |
+                echo Payload: ${{ github.event.client_payload }}
