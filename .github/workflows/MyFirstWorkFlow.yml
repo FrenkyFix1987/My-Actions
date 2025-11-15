@@ -49,4 +49,4 @@ jobs:
             - name: Show payload for repository_dispatch
               if: ${{ github.event_name == 'repository_dispatch' }}
               run: |
-                echo Payload: ${{ github.event.client_payload.unit }}
+                echo Payload: ${{ toJSON(github.event.client_payload.unit) }}
