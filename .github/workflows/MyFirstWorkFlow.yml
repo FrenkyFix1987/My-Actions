@@ -96,6 +96,7 @@ jobs:
     Post:
         runs-on: ubuntu-latest
         steps:
+            - run: exit 0
             - if: success()
               run: echo "Success!!!"
             - if: always()
