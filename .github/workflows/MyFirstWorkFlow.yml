@@ -107,6 +107,10 @@ jobs:
                 echo "::add-mask::$sleep_time"
                 echo "test_result=$test_result" >> "$GITHUB_OUTPUT"
                 echo "sleep_time=$sleep_time" >> "$GITHUB_OUTPUT"
+                echo "TEST_RESULT=$test_result" >> "$GITHUB_ENV"
+                echo "SLEEP_TIME=$sleep_time" >> "$GITHUB_ENV"
+              env: 
+                AWS_REGION: us-east-1
 
             - if: failure()
               
