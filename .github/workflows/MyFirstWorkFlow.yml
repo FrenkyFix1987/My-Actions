@@ -30,14 +30,18 @@ jobs:
     MyFirstJob:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "Hello World"
+            - name: Hello World Action
+              run: echo "Hello World"
+
             - name: Checkout
               uses: actions/checkout@v5
+
             - name: Show Repository Files
               run : |
                 echo "Event: ${{ github.event_name }}"
                 echo "This repository ${{ github.repository }} contains the following files: "
                 tree -a          
+                
             - name: Show Workflow Inputs
               if: ${{ github.event_name == 'workflow_dispatch' }}
               run: |
