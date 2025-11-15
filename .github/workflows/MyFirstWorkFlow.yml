@@ -50,3 +50,22 @@ jobs:
               if: ${{ github.event_name == 'repository_dispatch' }}
               run: |
                 echo Payload: '${{ toJSON(github.event.client_payload) }}'
+    MySecondJob:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "${{ github.job }}}"
+
+    MyThirdJob:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "${{ github.job }}"
+
+    MyFourthJob:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "${{ github.job }}}"
+
+    MyFifthJob:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "${{ github.job }}}"
