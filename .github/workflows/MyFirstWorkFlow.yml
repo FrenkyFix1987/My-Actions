@@ -31,7 +31,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Hello World Action
-              run: echo "Hello World"
+              run: Write-Host("Help")
+              working-directory: "./temp"
+              shell: pwsh
 
             - name: Checkout
               uses: actions/checkout@v5
@@ -41,7 +43,7 @@ jobs:
                 echo "Event: ${{ github.event_name }}"
                 echo "This repository ${{ github.repository }} contains the following files: "
                 tree -a          
-                
+
             - name: Show Workflow Inputs
               if: ${{ github.event_name == 'workflow_dispatch' }}
               run: |
@@ -58,21 +60,21 @@ jobs:
         runs-on: ubuntu-latest
         needs: MyFirstJob
         steps:
-            - run: "echo ${{ github.job }}; sleep 30" 
+            - run: "echo ${{ github.job }}" 
 
     MyThirdJob:
         runs-on: ubuntu-latest
         needs: MyFirstJob
         steps:
-            - run: "echo ${{ github.job }}; sleep 30" 
+            - run: "echo ${{ github.job }}" 
 
     MyFourthJob:
         needs: [MySecondJob, MyThirdJob]
         runs-on: ubuntu-latest
         steps:
-            - run: "echo ${{ github.job }}; sleep 30" 
+            - run: "echo ${{ github.job }}" 
 
     MyFifthJob:
         runs-on: ubuntu-latest
         steps:
-            - run: "echo ${{ github.job }}; sleep 30" 
+            - run: "echo ${{ github.job }}" 
