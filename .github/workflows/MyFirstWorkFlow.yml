@@ -53,19 +53,19 @@ jobs:
     MySecondJob:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "${{ github.job }}}"
+            - run: echo "${{ github.job }}; sleep 30" 
 
     MyThirdJob:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "${{ github.job }}"
+            - run: echo "${{ github.job }}; sleep 30" 
 
     MyFourthJob:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "${{ github.job }}}"
+            - run: echo "${{ github.job }}; sleep 30" 
 
     MyFifthJob:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "${{ github.job }}}"
+            - run: echo "${{ github.job }}; sleep 30" 
