@@ -101,6 +101,8 @@ jobs:
             - id: test_step
               run: |
                 echo "Post"
+                test_result=passed
+                sleep_time=15
                 echo "::add-mask::$test_result"
                 echo "::add-mask::$sleep_time"
                 echo "test_result=passed" >> "$GITHUB_OUTPUT"
