@@ -105,8 +105,8 @@ jobs:
                 sleep_time=15
                 echo "::add-mask::$test_result"
                 echo "::add-mask::$sleep_time"
-                echo "test_result=passed" >> "$GITHUB_OUTPUT"
-                echo "sleep_time=15" >> "$GITHUB_OUTPUT"
+                echo "test_result=$test_result" >> "$GITHUB_OUTPUT"
+                echo "sleep_time=$sleep_time" >> "$GITHUB_OUTPUT"
 
             - if: failure()
               
