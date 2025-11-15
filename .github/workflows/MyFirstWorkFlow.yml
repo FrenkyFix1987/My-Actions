@@ -102,7 +102,8 @@ jobs:
               
               run: |
                 echo "::debug::This is a debug message"
-                echo "::error file=MyFirstWorkFlow.yml,line=102::Failure!!!"
+                echo "::error file=MyFirstWorkFlow.yml,line=99::Failure!!!"
+                echo "::warning file=MyFirstWorkFlow.yml,line=99,endLine=106,col=76,endColumn=111,title=warning_title::warning massage"
             
             - if: cancelled()
               run: echo "Canceled!!!"
