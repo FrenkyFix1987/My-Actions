@@ -24,8 +24,8 @@ on:
                 description: "env to deploy"
                 type: environment
                 required: true
-    repository_dispatch:
-        types: ["coffee","tea"]
+    # repository_dispatch:
+    #     types: ["coffee","tea"]
 env: 
     TEST_ACCROSS_JOBS: test_result
 
@@ -37,7 +37,7 @@ jobs:
             fail-fast: false
             max-parallel: 3
             matrix:
-                os_version: [ubuntu-latest, windows-latest, macos-latest]
+                os_version: [ubuntu-latest]
                 node_version: [20, 21, 22]
         runs-on: ${{ matrix.os_version }}
         steps:
