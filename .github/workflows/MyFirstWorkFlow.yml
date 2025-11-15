@@ -99,7 +99,10 @@ jobs:
             - run: echo "Post"; sleep 30; exit 1
 
             - if: failure()
-              run: echo "::error file=MyFirstWorkFlow.yml,line=102::Failure!!!"
+              
+              run: |
+                echo "::debug::This is a debug message"
+                echo "::error file=MyFirstWorkFlow.yml,line=102::Failure!!!"
             
             - if: cancelled()
               run: echo "Canceled!!!"
