@@ -9,6 +9,6 @@ jobs:
             - name: Hello World Action
               run: |
                 echo "Hello World"
-                echo "### Hello World from MySimpleJob ::rocket::" >> $GITHUB_STEP_SUMMARY
+                echo "### Hello World from MySimpleJob :rocket:" >> $GITHUB_STEP_SUMMARY
                 echo "<h1>Test Heading</h1>" >> $GITHUB_STEP_SUMMARY
            
