@@ -26,6 +26,10 @@ on:
                 required: true
     repository_dispatch:
         types: ["coffee","tea"]
+env: 
+    TEST_ACCROSS_JOBS: test_result
+
+
 jobs:
     matrix_super_job:
         name: Supper Efficient build
@@ -47,7 +51,6 @@ jobs:
         steps:
             - name: Hello World Action
               run: |
-                echo "TEST_ACCROSS_JOBS=test_result" >> "$GITHUB_ENV"
                 echo "Hello World"
             #   working-directory: ./temp
 
