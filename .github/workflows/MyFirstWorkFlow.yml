@@ -97,7 +97,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - if: success()
-              run: "Success!!!"
+              run: echo "Success!!!"
             - if: always()
-              run: "Always!!!"
+              run: echo "Always!!!"
 
